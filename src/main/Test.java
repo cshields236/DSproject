@@ -37,12 +37,22 @@ public class Test {
 
 		subscriberdao.persistSubsriber(subscriber);
 
-		List<Subscriber>subscribers =  new ArrayList<Subscriber>();
-		subscribers =  subscriberdao.getAllSubscribers();
+		List<Subscriber> subscribers = subscriberdao.getAllSubscribers();
 
 		for (Subscriber s: subscribers){
-			System.out.println(s);
+			System.out.println(s.getUsername() );
 		}
+
+		//subscriberdao.mergeSubscriber(subscriber);
+		List <Subscriber> subscribers1 = subscriberdao.findSubByUsername("tommy260");
+
+		for (Subscriber s1: subscribers1){
+			System.out.println(s1.getUsername() +" "+ s1.getPassword());
+		}
+
+
+			Subscriber sub1 = subscribers.get(1);
+			subscriberdao.removeSubscriber(sub1);
 
 	}
 

@@ -20,7 +20,7 @@ public class Subscriber {
 
 	//Subscriber has one profile (Has a string descrription)
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 
 	private String username;

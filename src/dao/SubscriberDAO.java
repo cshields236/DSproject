@@ -45,6 +45,13 @@ public class SubscriberDAO {
 		return subscribers;
 
 	}
+
+	public List<Subscriber> findSubByUsername(String username){
+		EntityManager em = emf.createEntityManager();
+		List<Subscriber> subscribers1 = (List<Subscriber>) em.createNamedQuery("Subscriber.findByUsername").setParameter("username", username).getResultList();
+		em.close();
+		return subscribers1;
+	}
 }
 
 
